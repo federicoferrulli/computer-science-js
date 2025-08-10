@@ -57,10 +57,17 @@ class LinkedList{
             temp = temp.next;
             i++;
         }
+
         const previous = temp.prev;
-        previous.next = temp.next;
+        if(previous)
+            previous.next = temp.next;
+        else
+            this.head = temp.next;
+        
         const next = temp.next;
-        next.prev = previous;
+        if(next)
+            next.prev = previous;
+        
         temp.prev = null;
         temp.next = null;
         this.size--;
