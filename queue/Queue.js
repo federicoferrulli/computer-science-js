@@ -6,9 +6,10 @@ class Queue extends LinkedList{
     }
     enqueue(val){
         this.insert(val);
+        return this;
     }
     dequeue(){
-        this.deleteAt(0);
+        return this.deleteAt(0);
     }
 
 }

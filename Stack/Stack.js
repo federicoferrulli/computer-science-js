@@ -4,6 +4,7 @@ class Stack {
     }
     push(val){
         this.list.push(val);
+        return this;
     }
     pop(){
         return this.list.pop();
