@@ -26,6 +26,7 @@ class LinkedList{
             currNode.next = newNode;
         }
         this.size++;
+        return this;
     }
 
     insertAt(data, index){
@@ -71,6 +72,7 @@ class LinkedList{
         temp.prev = null;
         temp.next = null;
         this.size--;
+        return temp;
     }
 
     getAt(index){
