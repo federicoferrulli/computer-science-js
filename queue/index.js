@@ -8,6 +8,5 @@ function main(){
     coda.enqueue('Prova4');
     coda.enqueue('Prova5');
     coda.dequeue();
-    coda.print();
 }
 main();
