@@ -1,15 +1,15 @@
 import LinkedList from "../linked-list/LinkedList.js";
 
-class Queue extends LinkedList{
+class Queue{
     constructor(){
-        super();
+        this.list = new LinkedList();
     }
     enqueue(val){
-        this.insert(val);
+        this.list.insert(val);
         return this;
     }
     dequeue(){
-        return this.deleteAt(0);
+        return this.list.deleteAt(0);
     }
 
 }
