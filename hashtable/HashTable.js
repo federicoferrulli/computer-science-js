@@ -3,21 +3,22 @@ class HashTable {
         this.table = [];
         this.size = 0;
         this.table.length = num; 
-        this.table.fill(structuredClone([]));
     }  
     
     #_hash(key){
         let sum = 0;
         key = key.toString();
-
         for(let i=0; i < key.length; i++){
-            sum += key[i].charCodeAt(i);
+          sum += key[i].charCodeAt(0);
         }
         return sum % this.table.length;
     }
 
     set(key, val){
         const index = this.#_hash(key);
+        if(!Array.isArray(this.table[index])){
+          this.table[index] = [];
+        }
         this.table[index].push([key, val]);
         this.size++;
     }
