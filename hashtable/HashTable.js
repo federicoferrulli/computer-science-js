@@ -36,11 +36,9 @@ class HashTable {
     remove(key){
         const index = this.#_hash(key);
         const records = this.table[index];
-        for(let i=0; i<records.length;i++){
-            if(records[i] === key){
-                return records[i];
-            }
-        }
+        if(records){
+          delete this.table[index];
+        }  
         return undefined
     }
     
